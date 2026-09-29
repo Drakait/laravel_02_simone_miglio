@@ -66,11 +66,11 @@
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                     <img src="https://picsum.photos/800/400?random={{ $loop->iteration }}"
                     class="d-block w-100" style="height: 400px; object-fit: cover;" alt="{{ $item['articolo'] }}">
-                    <div class="carousel-caption d-none d-md-block">
+                    <div class="carousel-caption">
                         <div class="d-inline-block bg-dark bg-opacity-75 text-white rounded-3 p-3">
-                            <h5 class="text-primary">{{ $item['articolo'] }} </h5>
-                            <h6>{{ $item['tipologia'] }}</h6>
-                            <p>{{ $item['dettaglio'] }}</p>
+                            <h5 class="text-primary mb-0 mb-md-2">{{ $item['articolo'] }}</h5>
+                            <h6 class="d-none d-md-block">{{ $item['tipologia'] }}</h6>
+                            <p class="d-none d-md-block mb-0">{{ $item['dettaglio'] }}</p>
                         </div>
                     </div>
                 </div>
