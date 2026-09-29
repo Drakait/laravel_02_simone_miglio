@@ -25,11 +25,12 @@ class PublicController extends Controller
     public function varie ()
     {   
         $arrayGeneral = [
-            ['name' => 'Simone', 'surname' => 'Miglio', 'age' => 30],
-            ['name' => 'Mario', 'surname' => 'Rossi', 'age' => 25],
-            ['name' => 'Luca', 'surname' => 'Bianchi', 'age' => 28],
-            ['name' => 'Giulia', 'surname' => 'Verdi', 'age' => 32],
-            ['name' => 'Francesca', 'surname' => 'Neri', 'age' => 27],
+            ['articolo' => 'La cosa', 'tipologia' => 'dei fantastici 4', 'dettaglio' => 'il forzuto'],
+            ['articolo' => 'il coso', 'tipologia' => 'un oggetto', 'dettaglio' => 'qualcosa di utile'],
+            ['articolo' => 'l\'inutile', 'tipologia' => 'Politica italiana', 'dettaglio' => 'inutile da decenni'],
+            ['articolo' => 'quello', 'tipologia' => 'aggettivo dimostrativo', 'dettaglio' => 'indica qualcosa lontano sia da chi parla che da chi ascolta'],
+            ['articolo' => 'questo', 'tipologia' => 'aggettivo dimostrativo', 'dettaglio' => 'indica qualcosa vicino a chi parla'],
+            ['articolo' => 'codesto', 'tipologia' => 'aggettivo dimostrativo', 'dettaglio' => 'indica qualcosa vicino a chi ascolta'],
         ];
 
         return view('varie', ['varie' => $arrayGeneral]);

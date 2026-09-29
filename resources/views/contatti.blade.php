@@ -14,7 +14,7 @@
 <body>
     
     
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}"><i class="fa-solid fa-tent"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"

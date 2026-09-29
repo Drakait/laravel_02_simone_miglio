@@ -14,7 +14,7 @@
 <body>
     
     
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top" data-bs-theme="dark">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top" data-bs-theme="dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('home') }}"><i class="fa-solid fa-tent"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -41,34 +41,58 @@
     </div>
 </nav>
 
-<div class="container-fluid header"> 
+<div class="container-fluid header bg-dark h-50 p-5"> 
     <div class="row h-100 align-items-center justify-content-center">
         <div class="col-12 text-center">
-            <h1 class="text-primary display-5 fw-bold text-color">Varie ed Eventuali</h1>
+            <h1 class="text-primary display-5 fw-bold text-color"> Tante cose </h1>
         </div>
     </div>
     <div class="row justify-content-center align-items-center">
-        @foreach ($varie as $item)
-        <div class="col-12 col-md-3 d-flex justify-content-center align-items-center py-5 my-3">
-            <div class="card" style="width: 18rem;">
-                <img src="https://picsum.photos/100" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">{{$item['name']}} {{$item['surname']}}</h5>
-                    <p class="card-text">{{$item['age']}}</p>
-                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                </div>
+        
+        <div id="carouselExampleCaptions" class="carousel slide w-50 mx-auto">
+            <div class="carousel-indicators">
+                @foreach ($varie as $item)
+                <button type="button"
+                data-bs-target="#carouselExampleCaptions"
+                data-bs-slide-to="{{ $loop->index }}"
+                class="{{ $loop->first ? 'active' : '' }}"
+                @if ($loop->first) aria-current="true" @endif
+                aria-label="Slide {{ $loop->iteration }}"></button>
+                @endforeach
             </div>
             
+            <div class="carousel-inner">
+                @foreach ($varie as $item)
+                <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
+                    <img src="https://picsum.photos/800/400?random={{ $loop->iteration }}"
+                    class="d-block w-100" style="height: 400px; object-fit: cover;" alt="{{ $item['articolo'] }}">
+                    <div class="carousel-caption d-none d-md-block">
+                        <div class="d-inline-block bg-dark bg-opacity-75 text-white rounded-3 p-3">
+                            <h5 class="text-primary">{{ $item['articolo'] }} </h5>
+                            <h6>{{ $item['tipologia'] }}</h6>
+                            <p>{{ $item['dettaglio'] }}</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+            
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
-        @endforeach
     </div>
-</div>
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
 </script>
 </body>
 
