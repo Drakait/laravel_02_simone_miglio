@@ -2,7 +2,9 @@
     background-image: url('https://picsum.photos/1920/1080?random');
     background-size: cover;
     background-position: center;
-    height: 95vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh;
     
 }
 

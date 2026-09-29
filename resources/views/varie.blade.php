@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title> Chi Siamo </title>
+    <title> Sito </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
@@ -41,20 +41,28 @@
     </div>
 </nav>
 
-<header>
-    <div class="container-fluid header"> 
-        <div class="row h-100 align-items-center justify-content-center">
-            <div class="col-6">
-                <h2 class="text-primary">Chi Siamo</h2>
-                <p class="text-white text-color">Siamo un team di professionisti dedicati a fornire il miglior servizio possibile.</p>
-            </div>
-            <div class="col-6">
-                <img src="https://picsum.photos/400/300?random" class="shadow rounded" alt="Chi Siamo">
-            </div>
+<div class="container-fluid header"> 
+    <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-12 text-center">
+            <h1 class="text-primary display-5 fw-bold text-color">Varie ed Eventuali</h1>
         </div>
     </div>
-    
-</header>    
+    <div class="row justify-content-center align-items-center">
+        @foreach ($varie as $item)
+        <div class="col-12 col-md-3 d-flex justify-content-center align-items-center py-5 my-3">
+            <div class="card" style="width: 18rem;">
+                <img src="https://picsum.photos/100" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{$item['name']}} {{$item['surname']}}</h5>
+                    <p class="card-text">{{$item['age']}}</p>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+            
+        </div>
+        @endforeach
+    </div>
+</div>
 
 
 
