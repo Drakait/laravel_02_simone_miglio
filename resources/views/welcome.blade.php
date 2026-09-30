@@ -33,8 +33,8 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('contatti') }}">Contatti</a>
                 </li>
-                                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('varie') }}">Varie</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('servizi') }}">Servizi</a>
                 </li>
             </ul>
         </div>

@@ -4,24 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class PublicController extends Controller
+class ArticleController extends Controller
 {
-    public function homepage()
-    {
-        return view('welcome');
-    }
-
-    public function aboutUs()
-    {
-        return view('chi-siamo');
-    }
-
-    public function contacts()
-    {
-        return view('contatti');
-    }
-
-    public function servizi()
+    public function dettaglio($id)
     {
         $arrayGeneral = [
             ['articolo' => 'La cosa', 'tipologia' => 'dei fantastici 4', 'dettaglio' => 'il forzuto'],
@@ -32,6 +17,6 @@ class PublicController extends Controller
             ['articolo' => 'codesto', 'tipologia' => 'aggettivo dimostrativo', 'dettaglio' => 'indica qualcosa vicino a chi ascolta'],
         ];
 
-        return view('servizi', ['varie' => $arrayGeneral]);
+        return view('dettaglio', ['articolo' => $arrayGeneral[$id], 'id' => $id]);   
     }
 }
