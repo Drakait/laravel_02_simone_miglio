@@ -40,18 +40,16 @@
     </div>
 </nav>
 
-<div class="container-fluid header bg-dark p-5">
+<div class="container-fluid bg-dark p-5">
     <div class="row justify-content-center">
-        <div class="col-12 col-md-8 col-lg-6">
-            <div class="card bg-dark text-white border-secondary">
-                <img src="https://picsum.photos/800/400?random={{ $id + 1 }}"class="card-img-top" style="height: 300px; object-fit: cover;" alt="{{ $articolo['articolo'] }}">
-                <div class="card-body text-center">
-                    <h1 class="text-primary display-6 fw-bold">{{ $articolo['articolo'] }}</h1>
-                    <h5 class="text-secondary">{{ $articolo['tipologia'] }}</h5>
-                    <p class="card-text mt-3">{{ $articolo['dettaglio'] }}</p>
-                    <a href="{{ route('servizi') }}" class="btn btn-primary mt-2">Torna ai servizi</a>
-                </div>
-            </div>
+        <div class="col-12 col-lg-8">
+            <img src="https://picsum.photos/900/400?random={{ $id + 1 }}"
+                 class="img-fluid rounded mb-4 w-100" style="height: 350px; object-fit: cover;" alt="{{ $articolo['titolo'] }}">
+            <span class="badge bg-primary mb-2">{{ $articolo['categoria'] }}</span>
+            <h1 class="text-primary fw-bold">{{ $articolo['titolo'] }}</h1>
+            <p class="text-secondary">di {{ $articolo['autore'] }} · {{ $articolo['data'] }}</p>
+            <p class="text-white fs-5">{{ $articolo['testo'] }}</p>
+            <a href="{{ route('servizi') }}" class="btn btn-outline-primary mt-3">← Torna agli articoli</a>
         </div>
     </div>
 </div>

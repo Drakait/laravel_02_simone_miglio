@@ -41,17 +41,17 @@
     </div>
 </nav>
 
-<div class="container-fluid header bg-dark h-50 p-5"> 
+<div class="container-fluid header p-5"> 
     <div class="row h-100 align-items-center justify-content-center">
         <div class="col-12 text-center">
-            <h1 class="text-primary display-5 fw-bold text-color"> Tante cose </h1>
+            <h1 class="text-primary display-5 fw-bold text-color"> I nostri articoli </h1>
         </div>
     </div>
     <div class="row justify-content-center align-items-center">
         <div class="col-12 col-md-6">
             <div id="carouselExampleCaptions" class="carousel slide">
                 <div class="carousel-indicators">
-                    @foreach ($varie as $item)
+                    @foreach ($articoli as $item)
                     <button type="button"
                     data-bs-target="#carouselExampleCaptions"
                     data-bs-slide-to="{{ $loop->index }}"
@@ -62,16 +62,16 @@
                 </div>
                 
                 <div class="carousel-inner">
-                    @foreach ($varie as $item)
+                    @foreach ($articoli as $item)
                     <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                         <a href="{{ route('dettaglio', ['id' => $loop->index]) }}">
-                        <img src="https://picsum.photos/800/400?random={{ $loop->iteration }}" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="{{ $item['articolo'] }}">
+                            <img src="https://picsum.photos/800/400?random={{ $loop->iteration }}" class="d-block w-100" style="height: 400px; object-fit: cover;" alt="{{ $item['titolo'] }}">
                         </a>
                         <div class="carousel-caption">
                             <div class="d-inline-block bg-dark bg-opacity-75 text-white rounded-3 p-3">
-                                <h5 class="text-primary mb-0 mb-md-2">{{ $item['articolo'] }}</h5>
-                                <h6 class="d-none d-md-block">{{ $item['tipologia'] }}</h6>
-                                <p class="d-none d-md-block mb-0">{{ $item['dettaglio'] }}</p>
+                                <h5 class="text-primary mb-0 mb-md-2">{{ $item['titolo'] }}</h5>
+                                <h6 class="d-none d-md-block">{{ $item['categoria'] }}</h6>
+                                <p class="d-none d-md-block mb-0">{{ $item['sommario'] }}</p>
                             </div>
                         </div>
                     </div>
